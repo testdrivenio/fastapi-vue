@@ -2,7 +2,7 @@
 
 ### Want to learn how to build this?
 
-Check out the [post](https://testdriven.io/developing-a-single-page-app-with-fastapi-and-vuejs).
+Check out the [post](https://testdriven.io/blog/developing-a-single-page-app-with-fastapi-and-vuejs).
 
 ## Want to use this project?
 
