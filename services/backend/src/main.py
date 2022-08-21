@@ -28,7 +28,7 @@ app.add_middleware(
 app.include_router(users.router)
 app.include_router(notes.router)
 
-register_tortoise(app, config=TORTOISE_ORM, generate_schemas=False)
+register_tortoise(app, config=TORTOISE_ORM, generate_schemas=True)
 
 
 @app.get("/")
