@@ -1,5 +1,4 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import store from '@/store';
 
@@ -10,8 +9,6 @@ import Login from '@/views/Login';
 import Note from '@/views/Note';
 import Profile from '@/views/Profile';
 import Register from '@/views/Register';
-
-Vue.use(VueRouter);
 
 const routes = [
   {
@@ -33,37 +30,36 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
   },
   {
     path: '/profile',
     name: 'Profile',
     component: Profile,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
   },
   {
     path: '/note/:id',
     name: 'Note',
     component: Note,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
     props: true,
   },
   {
     path: '/editnote/:id',
     name: 'EditNote',
     component: EditNote,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
     props: true,
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (store.getters.isAuthenticated) {
       next();
