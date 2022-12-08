@@ -11,8 +11,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import { mapGetters, mapActions } from 'vuex';
-export default {
+
+export default defineComponent({
   name: 'Profile',
   created: function() {
     return this.$store.dispatch('viewMe');
@@ -32,5 +34,5 @@ export default {
       }
     }
   },
-}
+});
 </script>

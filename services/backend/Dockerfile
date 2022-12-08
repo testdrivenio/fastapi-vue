@@ -1,4 +1,4 @@
-FROM python:3.9-buster
+FROM python:3.11-buster
 
 RUN mkdir app
 WORKDIR /app
@@ -12,6 +12,6 @@ RUN pip install -r requirements.txt
 
 # for migrations
 COPY migrations .
-COPY aerich.ini .
+COPY pyproject.toml .
 
 COPY src/ .

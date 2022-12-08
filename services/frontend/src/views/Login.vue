@@ -15,8 +15,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
-export default {
+
+export default defineComponent({
   name: 'Login',
   data() {
     return {
@@ -36,5 +38,5 @@ export default {
       this.$router.push('/dashboard');
     }
   }
-}
+});
 </script>

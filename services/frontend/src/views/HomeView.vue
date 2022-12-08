@@ -14,12 +14,14 @@
 </template>
 <script>
 
-export default {
-  name: 'Home',
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'HomeView',
   computed : {
     isLoggedIn: function() {
       return this.$store.getters.isAuthenticated;
     }
   },
-}
+});
 </script>

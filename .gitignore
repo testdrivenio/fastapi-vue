@@ -1,5 +1,25 @@
-.DS_Store
+# Dependency directories
 node_modules/
-/dist/
+venv/
 env/
-__pycache__
+
+# Output files
+/dist/
+build/
+
+# Test output files
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+htmlcov/
+
+# Python cache files
+__pycache__/
+
+# Vue config files
+.eslintrc
+.eslintignore
+
+# IDE files
+.idea/
+.vscode/

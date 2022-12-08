@@ -1,23 +1,20 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-
-import store from '@/store';
+import { createRouter, createWebHistory } from 'vue-router'
 
 import Dashboard from '@/views/Dashboard';
 import EditNote from '@/views/EditNote';
-import Home from '@/views/Home.vue';
+import HomeView from '../views/HomeView.vue'
 import Login from '@/views/Login';
 import Note from '@/views/Note';
 import Profile from '@/views/Profile';
-import Register from '@/views/Register';
+import Register from '@/views/Register.vue';
+import store from '@/store';
 
-Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: "Home",
-    component: Home,
+    name: 'home',
+    component: HomeView
   },
   {
     path: '/register',
@@ -33,37 +30,36 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
   },
   {
     path: '/profile',
     name: 'Profile',
     component: Profile,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
   },
   {
     path: '/note/:id',
     name: 'Note',
     component: Note,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
     props: true,
   },
   {
     path: '/editnote/:id',
     name: 'EditNote',
     component: EditNote,
-    meta: {requiresAuth: true},
+    meta: { requiresAuth: true },
     props: true,
-  }
+  },
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes,
-});
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     if (store.getters.isAuthenticated) {
       next();
@@ -75,4 +71,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-export default router;
+export default router

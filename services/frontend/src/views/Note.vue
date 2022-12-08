@@ -13,8 +13,10 @@
 
 
 <script>
+import { defineComponent } from 'vue';
 import { mapGetters, mapActions } from 'vuex';
-export default {
+
+export default defineComponent({
   name: 'Note',
   props: ['id'],
   async created() {
@@ -39,5 +41,5 @@ export default {
       }
     }
   },
-};
+});
 </script>

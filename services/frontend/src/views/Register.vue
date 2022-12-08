@@ -19,8 +19,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
-export default {
+
+export default defineComponent({
   name: 'Register',
   data() {
     return {
@@ -42,5 +44,5 @@ export default {
       }
     },
   },
-};
+});
 </script>

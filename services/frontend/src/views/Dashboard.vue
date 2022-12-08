@@ -50,8 +50,10 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
 import { mapGetters, mapActions } from 'vuex';
-export default {
+
+export default defineComponent({
   name: 'Dashboard',
   data() {
     return {
@@ -73,5 +75,5 @@ export default {
       await this.createNote(this.form);
     },
   },
-};
+});
 </script>

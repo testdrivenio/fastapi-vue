@@ -24,7 +24,7 @@ services:
       - 8080:8080
 
   db:
-    image: postgres:13
+    image: postgres:15.1
     expose:
       - 5432
     environment:

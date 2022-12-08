@@ -39,7 +39,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'NavBar',
   computed: {
     isLoggedIn: function() {
@@ -52,7 +54,7 @@ export default {
       this.$router.push('/login');
     }
   },
-}
+});
 </script>
 
 <style scoped>
