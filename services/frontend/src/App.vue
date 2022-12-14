@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import NavBar from '@/components/NavBar.vue';
-export default defineComponent({
+// @ is an alias to /src
+import NavBar from '@/components/NavBar.vue'
+export default {
   components: {
     NavBar
   }
-});
+}
 </script>
 
 <style>

@@ -1,9 +1,9 @@
-aerich==0.5.5
-asyncpg==0.23.0
-bcrypt==3.2.0
-fastapi==0.68.0
+aerich==0.7.1
+asyncpg==0.27.0
+bcrypt==4.0.1
 passlib==1.7.4
+fastapi==0.88.0
 python-jose==3.3.0
 python-multipart==0.0.5
-tortoise-orm==0.17.6
-uvicorn==0.14.0
+tortoise-orm==0.19.2
+uvicorn==0.20.0

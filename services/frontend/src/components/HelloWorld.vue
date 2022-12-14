@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
 import axios from 'axios';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Ping',

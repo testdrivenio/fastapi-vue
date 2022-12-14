@@ -17,6 +17,7 @@
 <script>
 import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
+
 export default defineComponent({
   name: 'Login',
   data() {

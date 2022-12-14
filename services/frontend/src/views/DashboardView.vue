@@ -52,6 +52,7 @@
 <script>
 import { defineComponent } from 'vue';
 import { mapGetters, mapActions } from 'vuex';
+
 export default defineComponent({
   name: 'Dashboard',
   data() {
