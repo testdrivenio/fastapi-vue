@@ -9,7 +9,9 @@ import store from './store';
 const app = createApp(App);
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'http://localhost:5000/';  // the FastAPI backend
+// Get the base URL from the .env file
+axios.defaults.baseURL = process.env.VUE_APP_API_URL;
+console.log("Using API URL:", process.env.VUE_APP_API_URL);
 
 axios.interceptors.response.use(undefined, function (error) {
   if (error) {
